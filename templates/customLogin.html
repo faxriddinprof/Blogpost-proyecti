@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Cusom page
+    </h1>
+    <pre>
+        {{ msg }}
+        {{ errors }}
+
+    </pre>
+
+    <form method="post">
+    
+        {% csrf_token %}
+    
+    <!-- <label for="user-name">UserName</label>
+   <input type="text" name="useri_nami" placeholder="Usernami yoz" id="user-name">
+   <br>
+    <label for="user-name">Password</label>
+   <input name="useri_pass" type="password" placeholder="Password yoz" id="pass">
+   <br> -->
+   
+   {{ form }}
+
+    <button type="submit">Send</button>
+    </form>
+
+</body>
+</html>

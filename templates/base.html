@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base qism</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <p>Xush kelibsz {{user.username}}</p>
+         <header>
+        <a href="{% url 'home' %}"> Bu bosh ya'ni asosiy sahifa</a>
+    </header>
+
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Log Out</button>
+        </form>
+
+    {% else %}
+        <a href="{% url 'login' %}">Saytga kirish</a>
+        
+        <a href="{%url 'signup' %}"> ro'yxatdan o'tish</a>
+    {% endif %}
+
+    <div>
+    {%block content%}
+    {%endblock content%}
+    </div>
+<footer>
+    {% if request.path == '/' %}
+    <h1>
+        <p><a href="{% url 'detail_new' %}">Yangilik qo'shish(create)</a></p>
+    </h1>
+    {%endif%}
+</footer>
+
+</body>
+</html>

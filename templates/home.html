@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+
+
+    {% for post in object_list%}
+        <div class='post-entry'>
+            <h2><a href="{% url 'detail_view' post.pk %}">{{post.title}}</a> </h2>
+            <p>{{post.text | slice:':100'}}</p>
+
+        </div>
+    {%endfor%}
+
+
+{%endblock content%}
