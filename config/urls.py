@@ -22,7 +22,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # path('accounts/login/', auth_view.LoginView.as_view(template_name='login.html'), name='login'),
     # path('accounts/logout/',auth_view.LogoutView.as_view(),name='logout'),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/',include('accounts.urls')),
-    path('', include('blog.urls')),
+    path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/", include("accounts.urls")),
+    path("", include("blog.urls")),
 ]
