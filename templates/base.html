@@ -9,8 +9,8 @@
     {% if user.is_authenticated %}
         <p>Xush kelibsz {{user.username}}</p>
          <header>
-        <a href="{% url 'home' %}"> Bu bosh ya'ni asosiy sahifa</a>
-    </header>
+            <a href="{% url 'home' %}"> Bu bosh ya'ni asosiy sahifa</a>
+        </header>
 
         <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}
